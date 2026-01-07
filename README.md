@@ -1,36 +1,167 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Newelle Portfolio
 
-## Getting Started
+A modern, responsive portfolio website showcasing projects, experience, and services. Built with Next.js, React, and Tailwind CSS for a sleek, professional presentation.
 
-First, run the development server:
+## 🌟 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Responsive Design** - Fully responsive layout that works seamlessly on mobile, tablet, and desktop
+- **Modern Animations** - Smooth animations powered by Framer Motion for engaging user interactions
+- **Hero Section** - Eye-catching landing section to capture attention
+- **Project Showcase** - Display of featured projects with dedicated cards and showcase sections
+- **Shopify Integration** - Specialized section highlighting Shopify-related work
+- **About Section** - Professional biography and background information
+- **Contact Section** - Easy-to-use contact form and information
+- **Navigation** - Smooth, intuitive navigation bar with mobile support
+- **Dark Theme** - Modern dark theme with floating decorative icons
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16.1.1](https://nextjs.org/)
+- **React**: 19.2.3
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion 12.24.7](https://www.framer.com/motion/)
+- **Icons**: [Lucide React 0.562.0](https://lucide.dev/)
+- **Language**: TypeScript
+- **Linting**: ESLint
+
+## 📁 Project Structure
+
+```
+components/          # Reusable React components
+├── AboutSection.tsx      # About/bio section
+├── CodeWindow.tsx        # Code display component
+├── ContactSection.tsx    # Contact form and info
+├── FloatingIcons.tsx     # Animated background icons
+├── HeroSection.tsx       # Hero/landing section
+├── Navigation.tsx        # Navigation bar
+├── NavLinks.tsx          # Navigation links component
+├── ProjectCard.tsx       # Individual project card
+├── ProjectsSection.tsx   # Projects grid/showcase
+├── ShopifyCard.tsx       # Shopify project card
+└── ShopifySection.tsx    # Shopify work section
+
+hooks/               # Custom React hooks
+├── use-mobile.tsx        # Mobile detection hook
+
+lib/                 # Utility functions
+├── utils.ts              # Helper utilities
+
+types/               # TypeScript type definitions
+├── global.d.ts           # Global type declarations
+└── types.ts              # App-specific types
+
+app/                 # Next.js app directory
+├── layout.tsx            # Root layout component
+├── page.tsx              # Home page
+└── globals.css           # Global styles
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+ 
+- npm or yarn package manager
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd newelle-dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+4. **Open in browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Available Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint to check code quality
+
+## 🎨 Customization
+
+### Styling
+- **Tailwind CSS**: Modify `tailwind.config.ts` for theme customization
+- **Global Styles**: Update `app/globals.css` for global styling changes
+- **Components**: Each component has scoped Tailwind classes for easy customization
+
+### Content
+- **Hero Section**: Edit [components/HeroSection.tsx](components/HeroSection.tsx) to customize the hero text and CTA
+- **Projects**: Update [components/ProjectsSection.tsx](components/ProjectsSection.tsx) to add/remove projects
+- **About**: Modify [components/AboutSection.tsx](components/AboutSection.tsx) with your biography
+- **Contact**: Customize [components/ContactSection.tsx](components/ContactSection.tsx) with your contact details
+
+### Colors & Theme
+Adjust the color scheme in your Tailwind configuration or modify the `className` properties in components.
+
+## 🔧 Configuration
+
+### Environment Variables
+Create a `.env.local` file if you need environment-specific variables:
+```
+# Add any required environment variables here
+```
+
+### Next.js Config
+Modify [next.config.ts](next.config.ts) for Next.js-specific settings.
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive with breakpoints managed by Tailwind CSS:
+- Mobile-first approach
+- Adaptive navigation with mobile support
+- Touch-friendly interactive elements
+- Optimized performance for all devices
+
+## 🚀 Deployment
+
+### Vercel (Recommended for Next.js)
+
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Vercel automatically deploys on push
+
+### Other Platforms
+
+- **Netlify**: Requires Next.js adapter
+- **Traditional Hosting**: Build with `npm run build` and deploy the `.next` folder
+
+## 📦 Dependencies Overview
+
+| Package | Version | Purpose |
+|---------|---------|---------|
+| next | 16.1.1 | React framework |
+| react | 19.2.3 | UI library |
+| tailwindcss | 4 | Utility-first CSS |
+| framer-motion | 12.24.7 | Animation library |
+| lucide-react | 0.562.0 | Icon library |
+| typescript | 5 | Type checking |
+
+## 🤝 Contributing
+
+Feel free to fork this project and make improvements. Submit pull requests with clear descriptions of changes.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 📞 Contact
+
+For inquiries or questions about this portfolio, please use the contact section on the website or reach out directly through the provided contact information.
+
+---
+
+**Built with ❤️ using Next.js and React**
