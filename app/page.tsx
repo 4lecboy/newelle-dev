@@ -4,7 +4,6 @@ import ContactSection from "@/components/ContactSection";
 import Hero from "@/components/HeroSection";
 import Navigation from "@/components/Navigation";
 import Projects from "@/components/ProjectsSection";
-import ShopifySection from "@/components/ShopifySection";
 import FloatingIcons from "@/components/FloatingIcons";
 
 
@@ -18,7 +17,6 @@ const Index = () => {
           <Hero />
           <AboutSection />
           <Projects />
-          <ShopifySection />
           <ContactSection />
         </main>
       </div>
