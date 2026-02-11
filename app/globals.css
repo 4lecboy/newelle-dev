@@ -85,7 +85,7 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent;
+    @apply bg-linear-to-r from-primary to-emerald-400 bg-clip-text text-transparent;
   }
 
   .glow-accent {

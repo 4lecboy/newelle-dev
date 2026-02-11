@@ -6,9 +6,15 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "TaskFlow Dashboard",
-    description: "A modern project management application with real-time collaboration features.",
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+    title: "VapeTrack PH",
+    description: "Multi-branch sales and inventory management system with real-time stock tracking, dual authentication (4-digit PIN for staff, Email/Password for owners), and analytics dashboard with revenue charts. Fullstack application deployed on Vercel.",
+    techStack: [
+      "Next.js 16",
+      "TypeScript",
+      "Supabase (PostgreSQL)",
+      "Tailwind CSS",
+      "Shadcn UI",
+    ],
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     liveUrl: "#",
     githubUrl: "#",

@@ -45,7 +45,7 @@ export const ContactSection = () => {
             <span className="text-primary">/&gt;</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Have a project in mind? Let's build something amazing together.
+            Have a project in mind? Let&apos;s build something amazing together.
           </p>
         </motion.div>
 
@@ -119,7 +119,7 @@ export const ContactSection = () => {
             <span className="text-primary">&lt;/&gt;</span> Built with React, Tailwind & Framer Motion
           </p>
           <p className="text-muted-foreground/50 text-xs mt-2">
-            © {new Date().getFullYear()} Alec. All rights reserved.
+            © {new Date().getFullYear()} Newelle. All rights reserved.
           </p>
         </motion.footer>
       </div>

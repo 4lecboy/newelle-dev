@@ -40,7 +40,7 @@ Align the portfolio website with your current professional profile by updating p
 
 **What:** Update name, title, bio, contact information, and skills to match resume:
 
-- **Name:** "Newelle Alec Quiambao" (currently just "Newelle")
+- **Name:** "NEWELLE ALEC QUIAMBAO" (currently just "Newelle")
 - **Title:** "Fullstack Web Developer" (currently "Frontend Developer & Shopify Theme Customizer")
 - **Email:** Verify/update to nrquiambao1499@gmail.com
 - **GitHub:** Update to correct username [NEEDS CLARIFICATION: What is your current GitHub username?]

@@ -5,13 +5,14 @@ import CodeWindow from './CodeWindow';
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('');
-  const fullText = `const developer = {
-  name: "Alec",
-  role: "Frontend Developer & Shopify Theme Customizer",
-  stack: ["JavaScript", "React", "Next.js", "Shopify Liquid"],
-  passion: "Building beautiful, performant web experiences",
-  status: "Available for hire"
-}`;
+  const fullText = `const newelle = {
+  name: "Newelle Alec Quiambao",
+  role: "Fullstack Web Developer",
+  techStack: ["Next.js", "TypeScript", "React", "Supabase"],
+  focus: "Building scalable fullstack applications",
+  expertise: ["App Router", "PostgreSQL", "Authentication", "Tailwind CSS"],
+  status: "Open to opportunities"
+};`;
 
   useEffect(() => {
     let i = 0;
@@ -36,33 +37,44 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="mb-6">
-            <h1 className="text-4xl md:text-6xl font-bold font-mono text-foreground mb-4">
-              Hello, I'm <span className="text-primary">Newelle</span>.
-            </h1>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl">
-              I build pixel-perfect interfaces and custom Shopify experiences.
-            </p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-5xl md:text-6xl font-bold mb-6 text-foreground"
+            >
+              Hello, I&apos;m <span className="text-primary">Newelle</span>.
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-xl md:text-2xl mb-12 text-muted-foreground max-w-2xl"
+            >
+              I build fullstack web applications with modern technologies.
+            </motion.p>
           </div>
 
           <CodeWindow fileName="developer.jsx" className="w-full max-w-2xl mt-8">
-            <div className="p-6 font-mono text-sm md:text-base overflow-x-auto whitespace-pre">
-              <div dangerouslySetInnerHTML={{ 
-                __html: text
-                  // highlight string literals first so later replacements don't touch injected HTML
-                  .replace(/"(.*?)"/g, '<span class="text-terminal-green">"$1"</span>')
-                  // highlight the opening line (const developer = {) as a single unit
-                  .replace(/const developer = \{\n?/, '<span class="text-primary">const</span> <span class="text-accent">developer</span> <span class="text-foreground">=</span> <span class="text-accent">{</span>\n')
-                  .replace(/\[/g, '<span class="text-accent">[</span>')
-                  .replace(/\]/g, '<span class="text-accent">]</span>')
-                  .replace(/name:/g, '<span class="text-primary ml-4">name:</span>')
-                  .replace(/role:/g, '<span class="text-primary ml-4">role:</span>')
-                  .replace(/stack:/g, '<span class="text-primary ml-4">stack:</span>')
-                  .replace(/passion:/g, '<span class="text-primary ml-4">passion:</span>')
-                  .replace(/status:/g, '<span class="text-primary ml-4">status:</span>')
-                  // colorize closing brace if present
-                  .replace(/\}/g, '<span class="text-accent">}</span>')
-               }} />
-               <span className="terminal-cursor text-primary ml-1">▌</span>
+            <div className="p-6 font-mono text-sm text-foreground leading-relaxed overflow-x-auto whitespace-pre">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: text
+                    .replace(/"(.*?)"/g, '<span class="text-terminal-green">"$1"</span>')
+                    .replace(/name:/g, '<span class="text-primary ml-4">name:</span>')
+                    .replace(/role:/g, '<span class="text-primary ml-4">role:</span>')
+                    .replace(/techStack:/g, '<span class="text-primary ml-4">techStack:</span>')
+                    .replace(/focus:/g, '<span class="text-primary ml-4">focus:</span>')
+                    .replace(/expertise:/g, '<span class="text-primary ml-4">expertise:</span>')
+                    .replace(/status:/g, '<span class="text-primary ml-4">status:</span>')
+                    .replace(/const|newelle/g, '<span class="text-purple-400">$&</span>')
+                    .replace(/\[/g, '[')
+                    .replace(/\]/g, ']')
+                    .replace(/\{/g, '{')
+                    .replace(/\}/g, '}'),
+                }}
+              />
+              <span className="terminal-cursor text-primary ml-1">▌</span>
             </div>
           </CodeWindow>
 

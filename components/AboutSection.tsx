@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -6,19 +7,39 @@ import CodeWindow from "./CodeWindow"; // added import
 const bioLines = [
   "// About Me",
   "",
-  "I'm a Frontend Developer with a passion for",
-  "creating exceptional digital experiences.",
+  "I'm a Fullstack Web Developer focused on building",
+  "scalable, accessible web applications with thoughtful UX.",
   "",
-  "Specializing in modern JavaScript frameworks",
-  "like React and Next.js, I build fast,",
-  "accessible, and visually stunning websites.",
+  "BSIT graduate and Fullstack Web Developer building",
+  "complete web applications from database to UI.",
   "",
-  "As a Shopify theme expert, I help brands",
-  "customize their storefronts to stand out",
-  "and convert more customers.",
+  "Experienced with Next.js, PostgreSQL, MySQL, and Tailwind CSS to",
+  "deliver secure, maintainable systems.",
   "",
-  "// Currently seeking new opportunities",
-  "// Let's build something great together.",
+  "Proficient at using modern developer tools and AI assistants to",
+  "accelerate prototyping, debugging, and deployment workflows.",
+  "",
+  "I've shipped inventory systems and developer tools that",
+  "solve real-world problems with clean, maintainable code.",
+  "I care about collaboration, strong abstractions, and tests.",
+  "",
+  "// Building reliable experiences, one commit at a time.",
+  "// Let's build something remarkable together.",
+];
+
+const skills = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Tailwind CSS",
+  "Node.js",
+  "Express",
+  "Supabase",
+  "PostgreSQL",
+  "Authentication",
+  "REST APIs",
+  "Git",
+  "Github"
 ];
 
 export const AboutSection = () => {
@@ -92,7 +113,7 @@ export const AboutSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
-          {["React", "Next.js", "TypeScript", "Shopify Liquid", "Tailwind CSS", "Node.js", "Git", "Figma"].map(
+          {skills.map(
             (skill, index) => (
               <motion.div
                 key={skill}

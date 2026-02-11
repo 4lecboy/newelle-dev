@@ -121,8 +121,8 @@ export interface Project {
 
 #### Step 2.1: Update HeroSection - Name & Title
 
-- [ ] Open [components/HeroSection.tsx](components/HeroSection.tsx)
-- [ ] Find the greeting heading and replace with updated name:
+- [x] Open [components/HeroSection.tsx](components/HeroSection.tsx)
+- [x] Find the greeting heading and replace with updated name:
 
 ```typescript
         <motion.h1
@@ -131,11 +131,11 @@ export interface Project {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-5xl md:text-6xl font-bold mb-6 text-foreground"
         >
-          Hello, I&apos;m <span className="text-primary">Newelle Alec Quiambao</span>.
+          Hello, I&apos;m <span className="text-primary">NEWELLE ALEC QUIAMBAO</span>.
         </motion.h1>
 ```
 
-- [ ] Find the role description paragraph and replace with updated title:
+-- [x] Find the role description paragraph and replace with updated title:
 
 ```typescript
         <motion.p
@@ -150,11 +150,11 @@ export interface Project {
 
 #### Step 2.2: Update HeroSection - Typing Animation Code
 
-- [ ] In the same file, find the `fullText` constant and replace with updated developer object:
+- [x] In the same file, find the `fullText` constant and replace with updated developer object:
 
 ```typescript
 const fullText = `const developer = {
-  name: "Newelle Alec Quiambao",
+  name: "NEWELLE ALEC QUIAMBAO",
   role: "Fullstack Web Developer",
   company: "Primex Ventures",
   location: "Tarlac City, Philippines",
@@ -165,7 +165,7 @@ const fullText = `const developer = {
 };`;
 ```
 
-- [ ] Find the syntax highlighting section and replace with updated highlighting rules:
+-- [x] Find the syntax highlighting section and replace with updated highlighting rules:
 
 ```typescript
               <div
@@ -192,8 +192,8 @@ const fullText = `const developer = {
 
 #### Step 2.3: Update AboutSection - Bio
 
-- [ ] Open [components/AboutSection.tsx](components/AboutSection.tsx)
-- [ ] Find the `bioLines` array and replace with updated bio:
+- [x] Open [components/AboutSection.tsx](components/AboutSection.tsx)
+- [x] Find the `bioLines` array and replace with updated bio:
 
 ```typescript
 const bioLines = [
@@ -218,7 +218,7 @@ const bioLines = [
 
 #### Step 2.4: Update AboutSection - Skills
 
-- [ ] In the same file, find the `skills` array and replace with updated tech stack:
+- [x] In the same file, find the `skills` array and replace with updated tech stack:
 
 ```typescript
 const skills = [
@@ -237,8 +237,8 @@ const skills = [
 
 #### Step 2.5: Update ContactSection - Contact Links
 
-- [ ] Open [components/ContactSection.tsx](components/ContactSection.tsx)
-- [ ] Find the `contactLinks` array and replace with verified contact information:
+- [x] Open [components/ContactSection.tsx](components/ContactSection.tsx)
+- [x] Find the `contactLinks` array and replace with verified contact information:
 
 ```typescript
 const contactLinks = [
@@ -265,7 +265,7 @@ const contactLinks = [
 
 #### Step 2.6: Update ContactSection - Footer Copyright
 
-- [ ] In the same file, find the footer copyright text and replace with full name:
+- [x] In the same file, find the footer copyright text and replace with full name:
 
 ```typescript
         <motion.p
@@ -274,18 +274,18 @@ const contactLinks = [
           viewport={{ once: true }}
           className="text-center text-muted-foreground text-sm"
         >
-          © {new Date().getFullYear()} Newelle Alec Quiambao. All rights reserved.
+          © {new Date().getFullYear()} NEWELLE ALEC QUIAMBAO. All rights reserved.
         </motion.p>
 ```
 
 #### Step 2.7: Update App Metadata
 
-- [ ] Open [app/layout.tsx](app/layout.tsx)
-- [ ] Find the metadata export and replace with updated information:
+- [x] Open [app/layout.tsx](app/layout.tsx)
+- [x] Find the metadata export and replace with updated information:
 
 ```typescript
 export const metadata: Metadata = {
-  title: "Newelle Alec Quiambao | Fullstack Web Developer",
+  title: "NEWELLE ALEC QUIAMBAO | Fullstack Web Developer",
   description:
     "Fullstack Web Developer specializing in Next.js, TypeScript, React, and Supabase. Building scalable applications with PostgreSQL, authentication systems, and modern UI frameworks.",
 };
@@ -293,8 +293,8 @@ export const metadata: Metadata = {
 
 #### Step 2.8: Update Navigation Logo (Optional)
 
-- [ ] Open [components/Navigation.tsx](components/Navigation.tsx)
-- [ ] Find the logo/brand text and replace if desired:
+- [x] Open [components/Navigation.tsx](components/Navigation.tsx)
+- [x] Find the logo/brand text and replace if desired:
 
 ```typescript
           <Link href="/" className="text-2xl font-bold text-primary font-mono">
@@ -305,15 +305,15 @@ export const metadata: Metadata = {
 #### Step 2 Verification Checklist
 
 - [ ] Run `npm run dev` in terminal
-- [ ] Verify hero section displays full name: "Newelle Alec Quiambao"
+- [ ] Verify hero section displays full name: "NEWELLE ALEC QUIAMBAO"
 - [ ] Check typing animation shows updated developer object with correct company, location, stack
 - [ ] Verify about section bio reflects fullstack role and Primex Ventures employment
 - [ ] Confirm all 10 skills badges display correctly in about section
 - [ ] Test email link opens mail client with correct address
 - [ ] Test LinkedIn link opens correct profile in new tab
 - [ ] Test GitHub link opens correct profile (@4lecboy) in new tab
-- [ ] Verify footer shows full name: "© 2026 Newelle Alec Quiambao"
-- [ ] Check browser tab title shows: "Newelle Alec Quiambao | Fullstack Web Developer"
+- [ ] Verify footer shows full name: "© 2026 NEWELLE ALEC QUIAMBAO"
+- [ ] Check browser tab title shows: "NEWELLE ALEC QUIAMBAO | Fullstack Web Developer"
 - [ ] Run `npm run lint` to check for errors
 
 #### Step 2 STOP & COMMIT

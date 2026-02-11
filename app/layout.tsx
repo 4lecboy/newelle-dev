@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Newelle | Frontend Developer",
-  description: "Frontend Developer specializing in React, Next.js, and Shopify Theme Customization. Building modern, performant web experiences.",
+  title: "Newelle Dev | Fullstack Web Developer",
+  description:
+    "Fullstack Web Developer specializing in Next.js, TypeScript, React, and Supabase. Building scalable applications with PostgreSQL, authentication systems, and modern UI frameworks.",
 };
 
 export default function RootLayout({

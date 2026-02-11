@@ -47,11 +47,9 @@ export const Navigation = () => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="font-mono text-lg font-bold text-foreground hover:text-primary transition-colors"
+            className="text-2xl font-bold text-primary font-mono"
           >
-            <span className="text-primary">&lt;</span>
-            NewelleDev
-            <span className="text-primary">/&gt;</span>
+            &lt;Newelle Dev/&gt;
           </a>
 
           {/* Desktop Navigation */}
