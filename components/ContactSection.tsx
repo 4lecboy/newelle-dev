@@ -116,7 +116,7 @@ export const ContactSection = () => {
           className="mt-16 text-center"
         >
           <p className="text-muted-foreground text-sm font-mono">
-            <span className="text-primary">&lt;/&gt;</span> Built with React, Tailwind & Framer Motion
+            <span className="text-primary">&lt;/&gt;</span> Built with Nextjs, Tailwind & Framer Motion
           </p>
           <p className="text-muted-foreground/50 text-xs mt-2">
             © {new Date().getFullYear()} Newelle. All rights reserved.
