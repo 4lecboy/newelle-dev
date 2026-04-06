@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+"use client";
+
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import CodeWindow from './CodeWindow';
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('');
+  const measurerRef = useRef<HTMLDivElement | null>(null);
+  const [measuredWidth, setMeasuredWidth] = useState<number | null>(null);
   const fullText = `const newelle = {
   name: "Newelle Alec Quiambao",
-  role: "Fullstack Web Developer",
-  techStack: ["Next.js", "TypeScript", "React", "Supabase"],
+  role: ["Software Engineer", "Fullstack Web Developer", "Frontend Developer"],
+  techStack: ["Next.js", "TypeScript", "React", "Node.js", "Tailwind CSS", "PostgreSQL"],
   focus: "Building scalable fullstack applications",
-  expertise: ["App Router", "PostgreSQL", "Authentication", "Tailwind CSS"],
   status: "Open to opportunities"
 };`;
 
@@ -23,9 +26,18 @@ const Hero: React.FC = () => {
       } else {
         clearInterval(typingInterval);
       }
-    }, 30); // Typing speed
+    }, 10); // Typing speed
 
     return () => clearInterval(typingInterval);
+  }, [fullText]);
+
+  // Measure the full text width before paint so the code window can be shown at final width immediately
+  useLayoutEffect(() => {
+    if (measurerRef.current) {
+      const width = measurerRef.current.scrollWidth;
+      // Add a small buffer for padding/borders
+      setMeasuredWidth(width + 24);
+    }
   }, [fullText]);
 
   return (
@@ -55,7 +67,10 @@ const Hero: React.FC = () => {
             </motion.p>
           </div>
 
-          <CodeWindow fileName="developer.jsx" className="w-full max-w-2xl mt-8">
+          {/* Hidden measurer with same typography to compute final width */}
+          <div ref={measurerRef} className="p-6 font-mono text-sm leading-relaxed whitespace-pre" style={{position: 'absolute', visibility: 'hidden', pointerEvents: 'none'}}>{fullText}</div>
+
+          <CodeWindow fileName="developer.jsx" className="mt-8" autoWidth style={measuredWidth ? { width: measuredWidth } : undefined}>
             <div className="p-6 font-mono text-sm text-foreground leading-relaxed overflow-x-auto whitespace-pre">
               <div
                 dangerouslySetInnerHTML={{
@@ -65,7 +80,6 @@ const Hero: React.FC = () => {
                     .replace(/role:/g, '<span class="text-primary ml-4">role:</span>')
                     .replace(/techStack:/g, '<span class="text-primary ml-4">techStack:</span>')
                     .replace(/focus:/g, '<span class="text-primary ml-4">focus:</span>')
-                    .replace(/expertise:/g, '<span class="text-primary ml-4">expertise:</span>')
                     .replace(/status:/g, '<span class="text-primary ml-4">status:</span>')
                     .replace(/const|newelle/g, '<span class="text-purple-400">$&</span>')
                     .replace(/\[/g, '[')

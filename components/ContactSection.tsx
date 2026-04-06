@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Linkedin, Github, Terminal } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import CodeWindow from "./CodeWindow";
 
 const contactLinks = [
@@ -100,7 +100,7 @@ export const ContactSection = () => {
                 className="mt-8 pt-6 border-t border-panel-border"
               >
                 <p className="text-muted-foreground text-sm">
-                  <span className="text-emerald-400">// </span>
+                  <span className="text-emerald-400">{"// "}</span>
                   Currently available for freelance projects and full-time opportunities.
                 </p>
               </motion.div>

@@ -1,50 +1,41 @@
 "use client";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import CodeWindow from "./CodeWindow"; // added import
-
-const bioLines = [
-  "// About Me",
-  "",
-  "I'm a Fullstack Web Developer focused on building",
-  "scalable, accessible web applications with thoughtful UX.",
-  "",
-  "BSIT graduate and Fullstack Web Developer building",
-  "complete web applications from database to UI.",
-  "",
-  "Experienced with Next.js, PostgreSQL, MySQL, and Tailwind CSS to",
-  "deliver secure, maintainable systems.",
-  "",
-  "Proficient at using modern developer tools and AI assistants to",
-  "accelerate prototyping, debugging, and deployment workflows.",
-  "",
-  "I've shipped inventory systems and developer tools that",
-  "solve real-world problems with clean, maintainable code.",
-  "I care about collaboration, strong abstractions, and tests.",
-  "",
-  "// Building reliable experiences, one commit at a time.",
-  "// Let's build something remarkable together.",
-];
-
-const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Tailwind CSS",
-  "Node.js",
-  "Express",
-  "Supabase",
-  "PostgreSQL",
-  "Authentication",
-  "REST APIs",
-  "Git",
-  "Github"
-];
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import AboutBioWindow from "./about/AboutBioWindow";
+import SkillsModal from "./about/SkillsModal";
+import SkillsPreview from "./about/SkillsPreview";
+import { bioLines, skills, visibleSkillsCount } from "./about/about-data";
 
 export const AboutSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
+
+  const previewSkills = skills.slice(0, visibleSkillsCount);
+
+  useEffect(() => {
+    if (!isSkillsModalOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsSkillsModalOpen(false);
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isSkillsModalOpen]);
+
+  const openSkillsModal = () => setIsSkillsModalOpen(true);
+  const closeSkillsModal = () => setIsSkillsModalOpen(false);
 
   return (
     <section id="about" className="py-24 px-4">
@@ -67,67 +58,18 @@ export const AboutSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="overflow-hidden"
         >
-          <CodeWindow fileName="about.md" className="rounded-xl">
-            {/* Editor Content */}
-            <div className="flex">
-              {/* Line Numbers */}
-              <div className="py-6 px-4 border-r border-panel-border bg-secondary/50 select-none">
-                {bioLines.map((_, index) => (
-                  <div
-                    key={index}
-                    className="text-line-number font-mono text-sm leading-7 text-right"
-                  >
-                    {index + 1}
-                  </div>
-                ))}
-              </div>
-
-              {/* Content */}
-              <div className="py-6 px-6 flex-1">
-                {bioLines.map((line, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.3, delay: 0.1 * index }}
-                    className="font-mono text-sm md:text-base leading-7"
-                  >
-                    {line.startsWith("//") ? (
-                      <span className="text-emerald-400">{line}</span>
-                    ) : line ? (
-                      <span className="text-foreground">{line}</span>
-                    ) : (
-                      <br />
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </CodeWindow>
+          <AboutBioWindow bioLines={bioLines} isInView={isInView} />
         </motion.div>
 
-        {/* Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
-        >
-          {skills.map(
-            (skill, index) => (
-              <motion.div
-                key={skill}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.3, delay: 0.5 + index * 0.05 }}
-                className="bg-panel border border-panel-border rounded-lg px-4 py-3 text-center font-mono text-sm hover:border-primary hover:glow-accent-sm transition-all duration-300"
-              >
-                {skill}
-              </motion.div>
-            )
-          )}
-        </motion.div>
+        <SkillsPreview
+          previewSkills={previewSkills}
+          isInView={isInView}
+          isSkillsModalOpen={isSkillsModalOpen}
+          onOpenSkillsModal={openSkillsModal}
+        />
       </div>
+
+      <SkillsModal isOpen={isSkillsModalOpen} skills={skills} onClose={closeSkillsModal} />
     </section>
   );
 };

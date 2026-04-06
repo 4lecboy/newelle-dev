@@ -1,14 +1,18 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, CSSProperties } from 'react';
 
 interface CodeWindowProps {
   children: ReactNode;
   fileName?: string;
   className?: string;
+  autoWidth?: boolean;
+  style?: CSSProperties;
 }
 
-const CodeWindow: React.FC<CodeWindowProps> = ({ children, fileName = "untitled", className = "" }) => {
+const CodeWindow: React.FC<CodeWindowProps> = ({ children, fileName = "untitled", className = "", autoWidth = false, style }) => {
+  const wrapperClasses = `bg-panel border border-panel-border rounded-lg overflow-hidden shadow-xl ${autoWidth ? 'inline-block w-auto max-w-full' : 'w-full'} ${className}`;
+
   return (
-    <div className={`bg-panel border border-panel-border rounded-lg overflow-hidden shadow-xl ${className}`}>
+    <div className={wrapperClasses} style={style}>
       {/* Window Title Bar */}
       <div className="bg-card border-b border-panel-border px-4 py-2 flex items-center gap-4">
         <div className="flex gap-2">
@@ -23,7 +27,7 @@ const CodeWindow: React.FC<CodeWindowProps> = ({ children, fileName = "untitled"
       </div>
       
       {/* Content */}
-      <div className="relative">
+      <div className="relative overflow-x-auto">
         {children}
       </div>
     </div>
