@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, MessageCircle } from "lucide-react";
 import CodeWindow from "./CodeWindow";
 
 const contactLinks = [
@@ -22,6 +22,13 @@ const contactLinks = [
     label: "GitHub",
     value: "@newelle-dev",
     href: "https://github.com/newelle-dev",
+  },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "Chat on WhatsApp",
+    // Replace with your real number using international format, e.g. https://wa.me/639171234567
+    href: "https://wa.me/601125366014",
   },
 ];
 

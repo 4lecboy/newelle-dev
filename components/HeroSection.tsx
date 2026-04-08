@@ -11,9 +11,9 @@ const Hero: React.FC = () => {
   const [measuredWidth, setMeasuredWidth] = useState<number | null>(null);
   const fullText = `const newelle = {
   name: "Newelle Alec Quiambao",
-  role: ["Software Engineer", "Fullstack Web Developer", "Frontend Developer"],
+  role: "Frontend Engineer (Full-stack Foundation)",
   techStack: ["Next.js", "TypeScript", "React", "Node.js", "Tailwind CSS", "PostgreSQL"],
-  focus: "Building scalable fullstack applications",
+  focus: "Building business-critical fullstack products that improve operations",
   status: "Open to opportunities"
 };`;
 
@@ -40,6 +40,11 @@ const Hero: React.FC = () => {
     }
   }, [fullText]);
 
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="w-full max-w-4xl">
@@ -63,14 +68,14 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl md:text-2xl mb-12 text-muted-foreground max-w-2xl"
             >
-              I build fullstack web applications with modern technologies.
+              Frontend Engineer with a full-stack foundation. Bridging delightful UI/UX with robust backend systems.
             </motion.p>
           </div>
 
           {/* Hidden measurer with same typography to compute final width */}
           <div ref={measurerRef} className="p-6 font-mono text-sm leading-relaxed whitespace-pre" style={{position: 'absolute', visibility: 'hidden', pointerEvents: 'none'}}>{fullText}</div>
 
-          <CodeWindow fileName="developer.jsx" className="mt-8" autoWidth style={measuredWidth ? { width: measuredWidth } : undefined}>
+          <CodeWindow fileName="developer.ts" className="mt-8" autoWidth style={measuredWidth ? { width: measuredWidth } : undefined}>
             <div className="p-6 font-mono text-sm text-foreground leading-relaxed overflow-x-auto whitespace-pre">
               <div
                 dangerouslySetInnerHTML={{
@@ -98,13 +103,21 @@ const Hero: React.FC = () => {
             transition={{ delay: 3, duration: 0.5 }}
             className="mt-8 flex gap-4"
           >
-            <a href="#projects" className="group flex items-center gap-2 px-6 py-3 bg-transparent border border-primary text-primary rounded hover:bg-primary/10 transition-colors font-mono text-sm">
+            <button
+              type="button"
+              onClick={() => scrollToSection('#projects')}
+              className="group flex items-center gap-2 px-6 py-3 bg-transparent border border-primary text-primary rounded hover:bg-primary/10 transition-colors font-mono text-sm"
+            >
               View Projects
               <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a href="#contact" className="px-6 py-3 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm">
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection('#contact')}
+              className="px-6 py-3 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm"
+            >
               Contact Me
-            </a>
+            </button>
           </motion.div>
         </motion.div>
       </div>

@@ -1,21 +1,21 @@
 export const bioLines = [
   "// About Me",
   "",
-  "I'm Newelle, a Fullstack Web Developer who builds",
-  "scalable, user-focused web applications from backend to UI.",
+  "I’m a performance-driven Frontend Engineer with a strong",
+  "full-stack foundation in the T3 stack.",
   "",
-  "Leveraging my BSIT background, I build practical solutions",
-  "that improve workflows, including inventory and developer tools.",
+  "I bridge delightful UI/UX with robust backend systems",
+  "to deliver highly performant, end-to-end user experiences.",
   "",
-  "Skilled in Next.js, TypeScript, PostgreSQL, MySQL, and Tailwind CSS",
-  "to create secure, maintainable, and high-quality products.",
+  "Recent work includes modernizing legacy workflows,",
+  "from real-time RFID attendance systems to full-stack",
+  "document logging web apps for government operations.",
   "",
-  "I deliver clean, reliable code while continuously improving",
-  "performance, maintainability, and user experience.",
+  "I enjoy turning complex business requirements into",
+  "scalable, interactive SaaS and B2B solutions.",
   "",
-  "// Building reliable products that solve real business needs.",
-  "// Looking to join a collaborative team building impactful SaaS, e-commerce,",
-  "// or internal tools where I can create measurable impact.",
+  "// Core Stack: Next.js, React, TypeScript, Node.js, Supabase, PostgreSQL, Tailwind CSS",
+  "// Debugging still feels like treasure hunting, and I love that part of the craft."
 ];
 
 export const skills = [

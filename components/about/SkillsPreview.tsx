@@ -34,9 +34,10 @@ const SkillsPreview = ({
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.3, delay: 0.5 + index * 0.05 }}
-            className="bg-panel border border-panel-border rounded-lg px-4 py-3 text-center font-mono text-sm hover:border-primary hover:glow-accent-sm transition-all duration-300"
+            className="bg-panel border border-panel-border rounded-lg px-4 py-4 text-left transition-all duration-300 hover:border-primary hover:glow-accent-sm"
           >
-            {skill.label}
+            <p className="font-mono text-sm">{skill.label}</p>
+            <p className="mt-2 text-xs leading-relaxed text-foreground/80">{skill.description}</p>
           </motion.div>
         ))}
       </div>

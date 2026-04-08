@@ -10,7 +10,7 @@ A modern, responsive portfolio website showcasing projects, experience, and serv
 - **Project Showcase** - Display of featured projects with dedicated cards and showcase sections
 - **Shopify Integration** - Specialized section highlighting Shopify-related work
 - **About Section** - Professional biography and background information
-- **Contact Section** - Easy-to-use contact form and information
+- **Contact Section** - Easy-to-use contact links for Email, LinkedIn, GitHub, and WhatsApp
 - **Navigation** - Smooth, intuitive navigation bar with mobile support
 - **Dark Theme** - Modern dark theme with floating decorative icons
 
@@ -60,23 +60,26 @@ app/                 # Next.js app directory
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn package manager
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd newelle-dev
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    ```
@@ -94,33 +97,40 @@ app/                 # Next.js app directory
 ## 🎨 Customization
 
 ### Styling
+
 - **Tailwind CSS**: Modify `tailwind.config.ts` for theme customization
 - **Global Styles**: Update `app/globals.css` for global styling changes
 - **Components**: Each component has scoped Tailwind classes for easy customization
 
 ### Content
+
 - **Hero Section**: Edit [components/HeroSection.tsx](components/HeroSection.tsx) to customize the hero text and CTA
 - **Projects**: Update [components/ProjectsSection.tsx](components/ProjectsSection.tsx) to add/remove projects
 - **About**: Modify [components/AboutSection.tsx](components/AboutSection.tsx) with your biography
 - **Contact**: Customize [components/ContactSection.tsx](components/ContactSection.tsx) with your contact details
 
 ### Colors & Theme
+
 Adjust the color scheme in your Tailwind configuration or modify the `className` properties in components.
 
 ## 🔧 Configuration
 
 ### Environment Variables
+
 Create a `.env.local` file if you need environment-specific variables:
+
 ```
 # Add any required environment variables here
 ```
 
 ### Next.js Config
+
 Modify [next.config.ts](next.config.ts) for Next.js-specific settings.
 
 ## 📱 Responsive Design
 
 The portfolio is fully responsive with breakpoints managed by Tailwind CSS:
+
 - Mobile-first approach
 - Adaptive navigation with mobile support
 - Touch-friendly interactive elements
@@ -141,14 +151,14 @@ The portfolio is fully responsive with breakpoints managed by Tailwind CSS:
 
 ## 📦 Dependencies Overview
 
-| Package | Version | Purpose |
-|---------|---------|---------|
-| next | 16.1.1 | React framework |
-| react | 19.2.3 | UI library |
-| tailwindcss | 4 | Utility-first CSS |
+| Package       | Version | Purpose           |
+| ------------- | ------- | ----------------- |
+| next          | 16.1.1  | React framework   |
+| react         | 19.2.3  | UI library        |
+| tailwindcss   | 4       | Utility-first CSS |
 | framer-motion | 12.24.7 | Animation library |
-| lucide-react | 0.562.0 | Icon library |
-| typescript | 5 | Type checking |
+| lucide-react  | 0.562.0 | Icon library      |
+| typescript    | 5       | Type checking     |
 
 ## 🤝 Contributing
 
