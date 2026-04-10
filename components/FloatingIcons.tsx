@@ -15,7 +15,7 @@ import {
   Box,
   Cpu
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const icons = [
   { Icon: Code2, delay: 0, x: "10%", y: "15%" },
@@ -33,7 +33,6 @@ const icons = [
 ];
 
 export default function FloatingIcons() {
-  const [mounted, setMounted] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -48,8 +47,6 @@ export default function FloatingIcons() {
   });
 
   useEffect(() => {
-    setMounted(true);
-    
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -58,8 +55,6 @@ export default function FloatingIcons() {
     window.addEventListener("pointermove", handleMouseMove);
     return () => window.removeEventListener("pointermove", handleMouseMove);
   }, [mouseX, mouseY]);
-
-  if (!mounted) return null;
 
   return (
     <div 

@@ -8,6 +8,7 @@ A modern, responsive portfolio website showcasing projects, experience, and serv
 - **Modern Animations** - Smooth animations powered by Framer Motion for engaging user interactions
 - **Hero Section** - Eye-catching landing section to capture attention
 - **Project Showcase** - Display of featured projects with dedicated cards and showcase sections
+- **Projects Page** - Dedicated /projects route to browse the full project catalog
 - **Shopify Integration** - Specialized section highlighting Shopify-related work
 - **About Section** - Professional biography and background information
 - **Contact Section** - Easy-to-use contact links for Email, LinkedIn, GitHub, and WhatsApp
@@ -105,7 +106,7 @@ app/                 # Next.js app directory
 ### Content
 
 - **Hero Section**: Edit [components/HeroSection.tsx](components/HeroSection.tsx) to customize the hero text and CTA
-- **Projects**: Update [components/ProjectsSection.tsx](components/ProjectsSection.tsx) to add/remove projects
+- **Projects Data**: Update [lib/projects.ts](lib/projects.ts) to add/remove projects for both homepage featured cards and the /projects page
 - **About**: Modify [components/AboutSection.tsx](components/AboutSection.tsx) with your biography
 - **Contact**: Customize [components/ContactSection.tsx](components/ContactSection.tsx) with your contact details
 

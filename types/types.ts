@@ -1,9 +1,9 @@
 export interface Project {
-  id: string;
   title: string;
   description: string;
-  stack: string[];
+  techStack: string[];
   imageUrl: string;
-  demoUrl?: string;
+  liveUrl?: string;
   githubUrl?: string;
+  featured?: boolean;
 }

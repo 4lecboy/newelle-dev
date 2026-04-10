@@ -1,16 +1,22 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", id: "about" },
+  { label: "Projects", id: "projects" },
+  { label: "Contact", id: "contact" },
 ];
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,9 +27,9 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (id: string) => {
     setIsMobileOpen(false);
-    const element = document.querySelector(href);
+    const element = document.querySelector(`#${id}`);
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -41,29 +47,47 @@ export const Navigation = () => {
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            className="text-2xl font-bold text-primary font-mono"
-          >
-            &lt;Newelle Dev/&gt;
-          </a>
+          {isHomePage ? (
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="text-2xl font-bold text-primary font-mono"
+            >
+              &lt;Newelle Dev/&gt;
+            </a>
+          ) : (
+            <Link href="/" className="text-2xl font-bold text-primary font-mono">
+              &lt;Newelle Dev/&gt;
+            </Link>
+          )}
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.label}
-                onClick={() => scrollToSection(link.href)}
-                className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </button>
-            ))}
+            {navLinks.map((link) =>
+              isHomePage ? (
+                <button
+                  key={link.label}
+                  onClick={() => scrollToSection(link.id)}
+                  className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors relative group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </button>
+              ) : (
+                <Link
+                  key={link.label}
+                  href={`/#${link.id}`}
+                  onClick={() => setIsMobileOpen(false)}
+                  className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors relative group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </Link>
+              ),
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -87,16 +111,28 @@ export const Navigation = () => {
           className="md:hidden overflow-hidden"
         >
           <div className="py-4 space-y-2">
-            {navLinks.map((link) => (
-              <button
-                key={link.label}
-                onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left font-mono text-sm text-muted-foreground hover:text-primary hover:bg-secondary/50 px-4 py-2 rounded-lg transition-all"
-              >
-                <span className="text-primary mr-2">&gt;</span>
-                {link.label}
-              </button>
-            ))}
+            {navLinks.map((link) =>
+              isHomePage ? (
+                <button
+                  key={link.label}
+                  onClick={() => scrollToSection(link.id)}
+                  className="block w-full text-left font-mono text-sm text-muted-foreground hover:text-primary hover:bg-secondary/50 px-4 py-2 rounded-lg transition-all"
+                >
+                  <span className="text-primary mr-2">&gt;</span>
+                  {link.label}
+                </button>
+              ) : (
+                <Link
+                  key={link.label}
+                  href={`/#${link.id}`}
+                  onClick={() => setIsMobileOpen(false)}
+                  className="block w-full text-left font-mono text-sm text-muted-foreground hover:text-primary hover:bg-secondary/50 px-4 py-2 rounded-lg transition-all"
+                >
+                  <span className="text-primary mr-2">&gt;</span>
+                  {link.label}
+                </Link>
+              ),
+            )}
           </div>
         </motion.div>
       </div>
