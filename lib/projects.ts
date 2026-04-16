@@ -20,6 +20,23 @@ export const projects: Project[] = [
   },
 
   {
+    title: "Devfinder",
+    description:
+      "Discover GitHub users with a clean, fast React + Vite app. Search by username, view profile details, and jump to followers, following, and repositories. Responsive design with Tailwind CSS and smooth animations using Framer Motion. Powered by GitHub's API for real-time data.",
+    techStack: [
+      "React 19",
+      "Vite 7",
+      "Tailwind CSS 4",
+      "Axios",
+      "Lucide React",
+      "GitHub API",
+    ],
+    imageUrl: "/project-img/devfinder.webp",
+    liveUrl: "https://devfinder-newelle.vercel.app/",
+    githubUrl: "https://github.com/newelle-dev/devfinder",
+    featured: true,
+  },
+    {
     title: "RevvUp Auto",
     description:
       "Professional auto workshop landing site with a conversion-first single-page flow: hero, services, testimonials, and contact/location CTAs. Data-driven business content and component-driven UI for clear customer actions.",
