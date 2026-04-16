@@ -18,21 +18,22 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/newelle-dev/vapetrack-ph",
     featured: true,
   },
+
   {
-    title: "Chong's Cool Breeze",
+    title: "RevvUp Auto",
     description:
-      "Professional aircon services landing site with a conversion-focused single-page flow: hero, services, booking CTAs, coverage map, FAQ, and trust/review components. Data-driven content and component-driven UI built for fast conversion.",
+      "Professional auto workshop landing site with a conversion-first single-page flow: hero, services, testimonials, and contact/location CTAs. Data-driven business content and component-driven UI for clear customer actions.",
     techStack: [
-      "Next.js (App Router)",
-      "React",
+      "Next.js 16",
+      "React 19",
       "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
+      "Tailwind CSS 4",
+      "Motion",
       "Lucide React",
     ],
-    imageUrl: "/project-img/chongs-cool-breeze.webp",
-    liveUrl: "https://chongs-cool-breeze.vercel.app/",
-    githubUrl: "https://github.com/newelle-dev/chongs-cool-breeze",
+    imageUrl: "/project-img/revvup-auto.webp",
+    liveUrl: "https://revvup-auto-swart.vercel.app/",
+    githubUrl: "https://github.com/newelle-dev/revvup-auto",
     featured: true,
   },
 ];
