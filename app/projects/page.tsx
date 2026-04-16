@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import FloatingIcons from "@/components/FloatingIcons";
 import Navigation from "@/components/Navigation";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectFeatureSection from "@/components/ProjectFeatureSection";
 import { projects } from "@/lib/projects";
 
 const ProjectsPage = () => {
@@ -46,9 +46,9 @@ const ProjectsPage = () => {
                 </div>
               </motion.div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex flex-col gap-32 pb-16">
                 {projects.map((project, index) => (
-                  <ProjectCard key={project.title} {...project} index={index} />
+                  <ProjectFeatureSection key={project.title} {...project} index={index} />
                 ))}
               </div>
             </div>
