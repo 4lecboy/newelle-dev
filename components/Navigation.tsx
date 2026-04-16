@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { label: "About", id: "about" },
@@ -88,16 +89,20 @@ export const Navigation = () => {
                 </Link>
               ),
             )}
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="md:hidden text-foreground hover:text-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              className="text-foreground hover:text-primary transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}

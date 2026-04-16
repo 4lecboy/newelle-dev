@@ -2,40 +2,39 @@
 @import "tw-animate-css";
 
 @theme {
-  /* VS Code Dark Theme Colors */
-  --color-background: hsl(0 0% 12%);
-  --color-foreground: hsl(220 13% 91%);
-
-  --color-card: hsl(0 0% 15%);
-  --color-card-foreground: hsl(220 13% 91%);
-
-  --color-popover: hsl(0 0% 15%);
-  --color-popover-foreground: hsl(220 13% 91%);
-
+  --color-background: hsl(0 0% 98%);
+  --color-foreground: hsl(220 13% 10%);
+  
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(220 13% 10%);
+  
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(220 13% 10%);
+  
   --color-primary: hsl(174 72% 40%);
   --color-primary-foreground: hsl(0 0% 100%);
-
-  --color-secondary: hsl(0 0% 18%);
-  --color-secondary-foreground: hsl(220 13% 91%);
-
-  --color-muted: hsl(0 0% 18%);
-  --color-muted-foreground: hsl(220 9% 64%);
-
+  
+  --color-secondary: hsl(220 14% 94%);
+  --color-secondary-foreground: hsl(220 13% 10%);
+  
+  --color-muted: hsl(220 14% 94%);
+  --color-muted-foreground: hsl(220 9% 46%);
+  
   --color-accent: hsl(174 72% 40%);
   --color-accent-foreground: hsl(0 0% 100%);
-
+  
   --color-destructive: hsl(0 84% 60%);
   --color-destructive-foreground: hsl(0 0% 100%);
-
-  --color-border: hsl(0 0% 18%);
-  --color-input: hsl(0 0% 18%);
+  
+  --color-border: hsl(220 13% 91%);
+  --color-input: hsl(220 13% 91%);
   --color-ring: hsl(174 72% 40%);
 
   /* Custom color tokens */
-  --color-editor-bg: hsl(0 0% 12%);
-  --color-panel: hsl(0 0% 15%);
-  --color-panel-border: hsl(0 0% 18%);
-  --color-line-number: hsl(220 9% 46%);
+  --color-editor-bg: hsl(0 0% 98%);
+  --color-panel: hsl(0 0% 100%);
+  --color-panel-border: hsl(220 13% 91%);
+  --color-line-number: hsl(220 9% 64%);
   --color-terminal-green: hsl(142 71% 45%);
   --color-glow-accent: hsl(174 72% 40%);
 
@@ -44,6 +43,43 @@
 }
 
 @layer base {
+  .dark {
+    --color-background: hsl(0 0% 12%);
+    --color-foreground: hsl(220 13% 91%);
+    
+    --color-card: hsl(0 0% 15%);
+    --color-card-foreground: hsl(220 13% 91%);
+    
+    --color-popover: hsl(0 0% 15%);
+    --color-popover-foreground: hsl(220 13% 91%);
+    
+    --color-primary: hsl(174 72% 40%);
+    --color-primary-foreground: hsl(0 0% 100%);
+    
+    --color-secondary: hsl(0 0% 18%);
+    --color-secondary-foreground: hsl(220 13% 91%);
+    
+    --color-muted: hsl(0 0% 18%);
+    --color-muted-foreground: hsl(220 9% 64%);
+    
+    --color-accent: hsl(174 72% 40%);
+    --color-accent-foreground: hsl(0 0% 100%);
+    
+    --color-destructive: hsl(0 84% 60%);
+    --color-destructive-foreground: hsl(0 0% 100%);
+    
+    --color-border: hsl(0 0% 18%);
+    --color-input: hsl(0 0% 18%);
+    --color-ring: hsl(174 72% 40%);
+
+    --color-editor-bg: hsl(0 0% 12%);
+    --color-panel: hsl(0 0% 15%);
+    --color-panel-border: hsl(0 0% 18%);
+    --color-line-number: hsl(220 9% 46%);
+    --color-terminal-green: hsl(142 71% 45%);
+    --color-glow-accent: hsl(174 72% 40%);
+  }
+
   * {
     @apply border-border;
   }
