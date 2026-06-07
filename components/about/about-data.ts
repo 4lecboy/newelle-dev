@@ -1,7 +1,7 @@
 export const bioLines = [
   "// About Me",
   "",
-  "I’m a performance-driven Frontend Engineer with a strong",
+  "I’m a performance-driven Frontend Developer with a strong",
   "full-stack foundation in the T3 stack.",
   "",
   "I bridge delightful UI/UX with robust backend systems",

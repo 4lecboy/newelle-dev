@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   const [measuredWidth, setMeasuredWidth] = useState<number | null>(null);
   const fullText = `const newelle = {
   name: "Newelle Alec Quiambao",
-  role: "Frontend Engineer (Full-stack Foundation)",
+  role: "Frontend Developer (Full-stack Foundation)",
   techStack: ["Next.js", "TypeScript", "React", "Node.js", "Tailwind CSS", "PostgreSQL"],
   focus: "Building business-critical fullstack products that improve operations",
   status: "Open to opportunities"
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl md:text-2xl mb-12 text-muted-foreground max-w-2xl"
             >
-              Frontend Engineer with a full-stack foundation. Bridging delightful UI/UX with robust backend systems.
+              Frontend Developer with a full-stack foundation. Bridging delightful UI/UX with robust backend systems.
             </motion.p>
           </div>
 
